@@ -24,6 +24,7 @@ ax = plt.gca()
 ax.xaxis.set_major_locator(x_major)
 ax.yaxis.set_major_locator(y_major)
 
+
 for p in points:
     if p['type'] == 2:  # 仪表点
         plt.plot(p['x'], p['y'], 'o', color='#ED9121')
