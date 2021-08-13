@@ -8,7 +8,7 @@ import DataProcess as R
 # 3     road-point       道路上的点
 # 4     suggested-point  建议观测点
 
-d = R.DataResolve()
+d = R
 edges = d.load_edges()
 points = d.load_points()
 

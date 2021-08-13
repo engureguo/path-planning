@@ -1,8 +1,8 @@
-import math
 import json
+import math
 
-import DataProcess as R
 
+# 结合原始点文件 data.json，计算原始边的权值，写入edges2.json
 
 class DistanceCalculator:
 
@@ -10,7 +10,8 @@ class DistanceCalculator:
         self.edges = edges
         self.points = points
 
-    def get_distance(self, p1, p2):  # 两点之间的距离
+    @staticmethod
+    def get_distance(p1, p2):  # 两点之间的距离
         dx = p1[0] - p2[0]
         dy = p1[1] - p2[1]
         ds = math.sqrt((math.pow(dx, 2) + math.pow(dy, 2)))
@@ -45,6 +46,6 @@ class DistanceCalculator:
             f.write(json.dumps(new_list, indent=4))
 
 
-d = R.DataResolve()
-d = DistanceCalculator(d.load_edges(), d.load_points())
-d.get_all_weight() # 计算边的权值，写入 edges2.json 中
+# d = R
+# dc = DistanceCalculator(d.load_edges(), d.load_points())
+# dc.get_all_weight()  # 计算边的权值，写入 edges2.json 中
