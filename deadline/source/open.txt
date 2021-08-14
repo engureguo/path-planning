@@ -1,0 +1,32 @@
+# OPEN表
+class PriorityQueue:
+
+    def __init__(self):
+        self.queue = []
+
+    def put(self, node_cost):
+        """
+        :param node_cost: [value,cost]
+        """
+        self.queue.append(node_cost)
+
+    def get(self):
+        if self.queue:
+            min_i = 0
+            min_cost = self.queue[min_i][1]
+            for i in range(len(self.queue)):
+                if self.queue[i][1] < min_cost:
+                    min_i = i
+                    min_cost = self.queue[i][1]
+            return self.queue.pop(min_i)
+
+    def contain(self,value):
+        for i in range(len(self.queue)):
+            if self.queue[i][0]==value:
+                return self.queue[i],True
+        return None,False
+
+    def is_empty(self):
+        if self.queue:
+            return False
+        return True

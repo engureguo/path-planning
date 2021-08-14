@@ -1,0 +1,13 @@
+# 地图
+class Graph:
+    def __init__(self):
+        self.romania_graph = [[0] * PLACES_NUM for i in range(PLACES_NUM)]
+
+    def add_edge(self, _from, _to, _value):
+        if _from < PLACES_NUM:
+            if _to < PLACES_NUM:
+                self.romania_graph[_from][_to] = _value
+                self.romania_graph[_to][_from] = _value
+
+    def get_edge(self, _from, _to):
+        return self.romania_graph[_from][_to]
