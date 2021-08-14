@@ -24,7 +24,7 @@ class my_calculation:
     def cal_and_write_edges2():
         data_calc = DU.DistanceCalculator(DP.load_edges(), DP.load_points())
         data_calc.get_all_weight()
-        print('写入 edges2.json 完毕')
+        print('计算出每个边的权值，写入 edges2.json 完毕！')
 
     # 根据 points和edges2 计算邻接表
     def get_graph_chain(self):
@@ -48,7 +48,7 @@ class my_calculation:
                 # 将结果记录到list中
                 points_list.append({"no": p['no'], "path": ret_dic["path"], "dist": self.filter_data(ret_dic["dist"])})
         DP.write_dic_to_json(points_list, "shortestpaths.json")
-        print('calculation done!')
+        print('计算出每个点到其他点的最短路径，写入到 shortestpaths.json 完毕！')
 
     @staticmethod
     def filter_data(dist_dict):
@@ -58,5 +58,5 @@ class my_calculation:
         return dist_dict
 
 
-obj = my_calculation()
-obj.calculate_shortest_points()
+# obj = my_calculation()
+# obj.calculate_shortest_points()

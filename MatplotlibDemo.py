@@ -30,6 +30,7 @@ for p in points:
         plt.plot(p['x'], p['y'], 'o', color='#ED9121')
     else:  # 路径点
         plt.plot(p['x'], p['y'], 'o', color='#0085c3')
+        plt.text(p['x'], p['y'], p['no'])
 
 for e in edges:
     # print(str(e['p']) + '\t' + str(e['q'])
@@ -38,3 +39,4 @@ for e in edges:
     plt.plot((x1, x2), (y1, y2))
 
 plt.show()
+# plt.savefig('fig.png')

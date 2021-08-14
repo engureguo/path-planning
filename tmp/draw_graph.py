@@ -3,6 +3,8 @@
 import networkx as nx
 import matplotlib.pyplot as plt
 
+# 绘制图，表示其中的邻接关系
+
 G = nx.Graph()
 point = [0, 1, 2, 3, 4, 5, 6]
 G.add_nodes_from(point)
