@@ -1,4 +1,16 @@
-算法核心：
+
+
+
+
+
+
+
+
+
+
+
+
+A* 算法核心：
 
 ```python
 def a_star(graph, h, _root, _goal):
@@ -45,6 +57,5 @@ def a_star(graph, h, _root, _goal):
 
 - parent_node[0] 代表当前 open 表中花费最少的点，即为 2 
 - parent_node[1] 代表 open表中花费最少的点的花费，即开始节点 1 到结点 2 的花费
-- 此时是遍历 节点 2 的临界点，2 上边的结点的索引就是 i，h[i] 可以理解为 在 i 节点花费的时间
-- length 可以理解为从 2 到 i 的花销
-- h[parent_node[0]]
+- h 是什么，都成 0 时 `f = parent_node[1] + length` 就单单代表路径，ok 吗
+

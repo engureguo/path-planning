@@ -189,6 +189,7 @@ def a_star(graph, h, _root, _goal):
                     pq_open.put([i, f])
     path = []
     cost = 0
+    print('parents:' + str(parents))
     print("parents:")
     for i in range(len(parents)):
         print(str(i) + '(' + chr(i + 65) + ')' + ' 的父节点是 ' + str(parents[i]))
