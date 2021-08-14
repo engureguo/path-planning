@@ -197,4 +197,4 @@ def all_astar_for_all_path_points():
 
 if __name__ == '__main__':
     get_list = all_astar_for_all_path_points()
-    loader.write_dic_to_json(get_list, 'resources/paths.json')
+    loader.write_dic_to_json(get_list, 'resources/paths.json')  # 写json文件

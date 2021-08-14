@@ -1,16 +1,97 @@
 
 
+> 平台上的 A* 算法：可以在一个无向有权图中计算 开始点 a 到 结束点 b 的最短路径及距离
+>
+> 代码：code/astar.py
+
+
+
+迁移到本题中：
+
+- 可以根据**坐标点**计算出**路径点之间的权值**，放弃栅格
+- 算出所有边的权值之后，可以算出所有点的**邻接矩阵**（仪表点不与其他任何点相邻）
+- 右上边的条件可以使用 a* 算法计算**任意两个路径点之间的最短路径和距离**
+- 全部代码在 `calc/a_star.py` 中
+
+```python
+def all_astar_for_all_path_points():
+    graph = init_graph()
+    h = [0 for i in range(PLACES_NUM)]
+    points = loader.load_json_to_dic('resources/data.json')
+    new_list = []  # 存放 a* 算法计算出的路径点之间的最短路径及路径长度
+    for start in range(PLACES_NUM):
+        a_dic = {'no': start, 'type': checker.get_spec_point_by_no(points, start)['type']}
+        to_dic = {}
+        for end in range(PLACES_NUM):
+            if start == end:
+                continue
+            p = checker.get_spec_point_by_no(points, start)
+            q = checker.get_spec_point_by_no(points, end)
+            if checker.is_path_point(p['type']) and checker.is_path_point(q['type']):  # 都是路径点
+                cost, path = a_star(graph, h, start, end)
+                to_spec_dic = {'cost': round(cost, 3), 'path': path}
+                to_dic[end] = to_spec_dic
+        a_dic['to'] = to_dic
+        new_list.append(a_dic)
+    return new_list
+```
+
+计算结果：`32号点的部分数据`
+
+```json
+{
+    "no": 32,
+    "type": 3,
+    "to": {
+        "0": {
+            "cost": 417.524,
+            "path": [
+                32,
+                31,
+                30,
+                70,
+                28,
+                27,
+                0
+            ]
+        },
+        "27": {
+            "cost": 319.519,
+            "path": [
+                32,
+                31,
+                30,
+                70,
+                28,
+                27
+            ]
+        },
+        "28": {
+            "cost": 221.519,
+            "path": [
+                32,
+                31,
+                30,
+                70,
+                28
+            ]
+        },
+        "29": {
+            "cost": 42.297,
+            "path": [
+                32,
+                29
+            ]
+        }
+    }
+}
+```
 
 
 
 
 
-
-
-
-
-
-A* 算法核心：
+### A* 算法核心
 
 ```python
 def a_star(graph, h, _root, _goal):
