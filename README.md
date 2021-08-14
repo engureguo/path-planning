@@ -1,9 +1,16 @@
-# path_planing
+# path-planing
+
 一个路径规划问题，用到了 dijkstra 和 旅行商TSP 算法
 
+---
+
+补充：在 `deadline/` 文件夹中使用 a* + tsp 算法
 
 
-算法参考连接：
+
+---
+
+参考连接：
 
 - dijkstra
   - https://haokan.baidu.com/v?pd=wisenatural&vid=1146937591908032169
