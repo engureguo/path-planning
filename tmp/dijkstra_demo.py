@@ -3,6 +3,10 @@ import numpy as np
 import networkx as nx
 import matplotlib.pyplot as plt
 
+# 不是 dijkstra 算法
+# 绘图
+# 邻接关系、边的权值
+
 # 链表
 graph_chain = {
     'a': {'b': 7, 'c': 9, 'f': 14},
@@ -23,6 +27,7 @@ graph_matrix = [
     [np.inf, np.inf, np.inf, 6.0, 0.0, 9.0],
     [14.0, np.inf, 2.0, np.inf, 9.0, 0.0]
 ]
+
 
 class draw_graph:
 

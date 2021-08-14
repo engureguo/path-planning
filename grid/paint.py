@@ -1,6 +1,8 @@
 import matplotlib.pyplot as plt
 from matplotlib.pyplot import MultipleLocator as ML
 
+# 栅格demo
+
 plt.figure(figsize=(10, 15))
 plt.xlim(2000, 2400)  # x轴的刻度范围
 plt.ylim(1400, 2000)  # y轴的刻度范围

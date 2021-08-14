@@ -1,5 +1,7 @@
 import numpy as np
 
+# dijkstra实现类
+
 # dijkstra算法学习，求图（无向图或有向图）中某一点到其他点的最短路径单源最短路径（单源最短路径）
 # 好看视频 https://haokan.baidu.com/v?pd=wisenatural&vid=1146937591908032169
 

@@ -1,8 +1,10 @@
 # coding=utf-8
 import copy
 
+# a*算法，来源于网络
+
 chess_size = 20
-FILE_STORAGE_WAY = '../tmp/123.txt'  # 随机数据文件存放路径
+FILE_STORAGE_WAY = '123.txt'  # 随机数据文件存放路径
 
 Start_x = 0
 Start_y = 0
