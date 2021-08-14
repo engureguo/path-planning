@@ -145,8 +145,6 @@ def a_star(graph, h, _root, _goal):
             length = graph.get_edge(parent_node[0], i)
             if length != 0:  # 边 (i, parent_node[0]) 存在
                 node, result = pq_open.contain(i)  # 查看open表中知否已经存在该节点
-
-                # 计算代价？？？
                 f = parent_node[1] + length + h[i] - h[parent_node[0]]  # 计算 cost
 
                 if q_close.contain(i):  # 节点 i 已经在 close表中

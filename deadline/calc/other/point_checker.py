@@ -1,10 +1,21 @@
-def is_path_point(type):
+def is_suggested_point(type1):
+    '''
+    type是不是建议观测点
+    :param type:
+    :return:
+    '''
+    if type1 == 4:
+        return True
+    return False
+
+
+def is_path_point(type1):
     '''
     type是不是路径点
     :param type:
     :return:
     '''
-    if type == 2:
+    if type1 == 2:
         return False
     return True
 
